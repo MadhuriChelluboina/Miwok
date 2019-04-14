@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/numbers_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/numbers_label"
+        android:background="#f57f17"
+        style="@style/CustomDimen"/>
+    <TextView
+        android:id="@+id/family_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/familyMembers_label"
+        style="@style/CustomDimen"
+        android:background="#2e7d32"
+        />
+    <TextView
+        android:id="@+id/colors_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/colors_label"
+        style="@style/CustomDimen"
+        android:background="#6a1b9a"
+        />
+    <TextView
+        android:id="@+id/phrases_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phrases_label"
+        style="@style/CustomDimen"
+        android:background="#00acc1"
+        />
+
+</LinearLayout>
