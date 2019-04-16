@@ -26,7 +26,7 @@ public class PhrasesActivity extends AppCompatActivity {
         mPhrasesArrayList.add(new CustomWords("yoowutis","Let’s go."));
         mPhrasesArrayList.add(new CustomWords("әnni'nem","Come here."));
 
-        CustomAdapter adapter = new CustomAdapter(this,mPhrasesArrayList);
+        CustomAdapter adapter = new CustomAdapter(this,mPhrasesArrayList,R.color.phrases_color);
         listView.setAdapter(adapter);
     }
 }

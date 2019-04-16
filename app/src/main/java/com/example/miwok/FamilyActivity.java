@@ -26,7 +26,7 @@ public class FamilyActivity extends AppCompatActivity {
         mFamilyArrayList.add(new CustomWords("paapa","grand father",R.drawable.family_grandfather));
 
         ListView listView = findViewById(R.id.root_listView);
-        CustomAdapter adapter = new CustomAdapter(this,mFamilyArrayList);
+        CustomAdapter adapter = new CustomAdapter(this,mFamilyArrayList,R.color.family_color);
         listView.setAdapter(adapter);
     }
 }

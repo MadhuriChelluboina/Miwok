@@ -1,6 +1,7 @@
 package com.example.miwok;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CustomAdapter extends ArrayAdapter<CustomWords> {
-    public CustomAdapter(Context context, ArrayList<CustomWords> customWords) {
+    private int mColorId;
+
+    public CustomAdapter(Context context, ArrayList<CustomWords> customWords, int mColorId) {
         super(context, 0, customWords);
+        this.mColorId = mColorId;
     }
 
 
@@ -43,7 +47,9 @@ public class CustomAdapter extends ArrayAdapter<CustomWords> {
             ImageView mImageView = listItemView.findViewById(R.id.icon_imageView);
             mImageView.setVisibility(View.GONE);
         }
-
+         View container = listItemView.findViewById(R.id.listView_container);
+        int color = ContextCompat.getColor(getContext(),mColorId);
+        container.setBackgroundColor(color);
         //listview will take this return value and add this to itself as its child view
         return listItemView;
     }

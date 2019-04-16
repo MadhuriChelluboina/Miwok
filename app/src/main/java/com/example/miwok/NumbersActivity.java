@@ -34,7 +34,7 @@ public class NumbersActivity extends AppCompatActivity {
 //            mNumbers_rootView.addView(mNumbers_textView);
 //        }
 
-        CustomAdapter customAdapter = new CustomAdapter(this,mNumbersList);
+        CustomAdapter customAdapter = new CustomAdapter(this,mNumbersList,R.color.numbers_color);
         ListView mNumbers_ListView = findViewById(R.id.root_listView);
         mNumbers_ListView.setAdapter(customAdapter);
 

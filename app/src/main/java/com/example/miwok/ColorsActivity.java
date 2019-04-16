@@ -27,7 +27,7 @@ public class ColorsActivity extends AppCompatActivity {
         colorsArrayList.add(new CustomWords("chiwiiṭә","mustard yellow",R.drawable.color_mustard_yellow));
 
         ListView listView = findViewById(R.id.root_listView);
-        CustomAdapter customAdapter = new CustomAdapter(this,colorsArrayList);
+        CustomAdapter customAdapter = new CustomAdapter(this,colorsArrayList,R.color.colors_color);
         listView.setAdapter(customAdapter);
 
 
