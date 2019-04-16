@@ -15,17 +15,16 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
 
-
         ArrayList<CustomWords> colorsArrayList = new ArrayList<>();
 
-        colorsArrayList.add(new CustomWords("weṭeṭṭi","red"));
-        colorsArrayList.add(new CustomWords("chokokki","green"));
-        colorsArrayList.add( new CustomWords("ṭakaakki","brown"));
-        colorsArrayList.add(new CustomWords("ṭopoppi","gray"));
-        colorsArrayList.add(new CustomWords("kululli","black"));
-        colorsArrayList.add(new CustomWords("kelelli","white"));
-        colorsArrayList.add(new CustomWords("ṭakaakki","dusty yellow"));
-        colorsArrayList.add(new CustomWords("chiwiiṭә","mustard yellow"));
+        colorsArrayList.add(new CustomWords("weṭeṭṭi","red",R.drawable.color_red));
+        colorsArrayList.add(new CustomWords("chokokki","green",R.drawable.color_green));
+        colorsArrayList.add( new CustomWords("ṭakaakki","brown",R.drawable.color_brown));
+        colorsArrayList.add(new CustomWords("ṭopoppi","gray",R.drawable.color_gray));
+        colorsArrayList.add(new CustomWords("kululli","black",R.drawable.color_black));
+        colorsArrayList.add(new CustomWords("kelelli","white",R.drawable.color_white));
+        colorsArrayList.add(new CustomWords("ṭakaakki","dusty yellow",R.drawable.color_dusty_yellow));
+        colorsArrayList.add(new CustomWords("chiwiiṭә","mustard yellow",R.drawable.color_mustard_yellow));
 
         ListView listView = findViewById(R.id.root_listView);
         CustomAdapter customAdapter = new CustomAdapter(this,colorsArrayList);

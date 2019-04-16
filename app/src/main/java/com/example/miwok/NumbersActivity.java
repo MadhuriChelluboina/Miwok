@@ -15,16 +15,16 @@ public class NumbersActivity extends AppCompatActivity {
 //        LinearLayout mNumbers_rootView  = findViewById(R.id.numbers_rootView);
 
         ArrayList<CustomWords> mNumbersList = new ArrayList<>();
-        mNumbersList.add(new CustomWords("lutti","one"));
-        mNumbersList.add(new CustomWords("otiiko","two"));
-        mNumbersList.add(new CustomWords("tolookosu","three"));
-        mNumbersList.add(new CustomWords("oyyisa","four"));
-        mNumbersList.add(new CustomWords("massokka","five"));
-        mNumbersList.add(new CustomWords("temmokka","six"));
-        mNumbersList.add(new CustomWords("kenekaku","seven"));
-        mNumbersList.add(new CustomWords("kawinta","eight"));
-        mNumbersList.add(new CustomWords("wo’e","nine"));
-        mNumbersList.add(new CustomWords("na’aacha","ten"));
+        mNumbersList.add(new CustomWords("lutti","one",R.drawable.number_one));
+        mNumbersList.add(new CustomWords("otiiko","two",R.drawable.number_two));
+        mNumbersList.add(new CustomWords("tolookosu","three",R.drawable.number_three));
+        mNumbersList.add(new CustomWords("oyyisa","four",R.drawable.number_four));
+        mNumbersList.add(new CustomWords("massokka","five",R.drawable.number_five));
+        mNumbersList.add(new CustomWords("temmokka","six",R.drawable.number_six));
+        mNumbersList.add(new CustomWords("kenekaku","seven",R.drawable.number_seven));
+        mNumbersList.add(new CustomWords("kawinta","eight",R.drawable.number_eight));
+        mNumbersList.add(new CustomWords("wo’e","nine",R.drawable.number_nine));
+        mNumbersList.add(new CustomWords("na’aacha","ten",R.drawable.number_ten));
 
 
 //        for(int index=0;index<mNumbersList.size();index++)
