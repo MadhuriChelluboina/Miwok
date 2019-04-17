@@ -1,12 +1,16 @@
 package com.example.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
+    MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,19 +18,52 @@ public class PhrasesActivity extends AppCompatActivity {
         setContentView(R.layout.list);
         ListView listView = findViewById(R.id.root_listView);
 
-        ArrayList<CustomWords> mPhrasesArrayList = new ArrayList<>();
-        mPhrasesArrayList.add(new CustomWords("minto wuksus","Where are you going?"));
-        mPhrasesArrayList.add(new CustomWords("tinnә oyaase'nә","What is your name?"));
-        mPhrasesArrayList.add(new CustomWords("oyaaset...","My name is..."));
-        mPhrasesArrayList.add(new CustomWords("michәksәs?","How are you feeling?"));
-        mPhrasesArrayList.add(new CustomWords("kuchi achit","I’m feeling good."));
-        mPhrasesArrayList.add(new CustomWords("әәnәs'aa?","Are you coming?"));
-        mPhrasesArrayList.add(new CustomWords("hәә’ әәnәm","Yes, I’m coming."));
-        mPhrasesArrayList.add(new CustomWords("әәnәm","I’m coming."));
-        mPhrasesArrayList.add(new CustomWords("yoowutis","Let’s go."));
-        mPhrasesArrayList.add(new CustomWords("әnni'nem","Come here."));
+        final ArrayList<CustomWords> mPhrasesArrayList = new ArrayList<>();
+        mPhrasesArrayList.add(new CustomWords("minto wuksus", "Where are you going?", R.raw.phrase_where_are_you_going));
+        mPhrasesArrayList.add(new CustomWords("tinnә oyaase'nә", "What is your name?", R.raw.phrase_what_is_your_name));
+        mPhrasesArrayList.add(new CustomWords("oyaaset...", "My name is...", R.raw.phrase_my_name_is));
+        mPhrasesArrayList.add(new CustomWords("michәksәs?", "How are you feeling?", R.raw.phrase_how_are_you_feeling));
+        mPhrasesArrayList.add(new CustomWords("kuchi achit", "I’m feeling good.", R.raw.phrase_im_feeling_good));
+        mPhrasesArrayList.add(new CustomWords("әәnәs'aa?", "Are you coming?", R.raw.phrase_are_you_coming));
+        mPhrasesArrayList.add(new CustomWords("hәә’ әәnәm", "Yes, I’m coming.", R.raw.phrase_yes_im_coming));
+        mPhrasesArrayList.add(new CustomWords("әәnәm", "I’m coming.", R.raw.phrase_im_coming));
+        mPhrasesArrayList.add(new CustomWords("yoowutis", "Let’s go.", R.raw.phrase_lets_go));
+        mPhrasesArrayList.add(new CustomWords("әnni'nem", "Come here.", R.raw.phrase_come_here));
 
-        CustomAdapter adapter = new CustomAdapter(this,mPhrasesArrayList,R.color.phrases_color);
+        CustomAdapter adapter = new CustomAdapter(this, mPhrasesArrayList, R.color.phrases_color);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releaseMediaPlayer();
+                CustomWords wordObject = mPhrasesArrayList.get(position);
+                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, wordObject.getmAudioResourceId());
+                mMediaPlayer.start();
+                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        releaseMediaPlayer();
+                    }
+                });
+            }
+        });
+    }
+
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mMediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mMediaPlayer = null;
+        }
     }
 }
