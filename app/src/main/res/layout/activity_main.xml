@@ -3,40 +3,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="#FFF7DA"
     android:orientation="vertical"
-    android:background="#FFF7DA">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/numbers_textView"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/numbers_label"
-        android:background="#FD8E09"
-        style="@style/CustomDimen"/>
-    <TextView
-        android:id="@+id/family_textView"
+        android:background="#FD8E09">
+
+        <TextView
+            android:id="@+id/numbers_textView"
+            style="@style/CustomDimen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/numbers_label" />
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/familyMembers_label"
-        style="@style/CustomDimen"
-        android:background="#379237"
-        />
-    <TextView
-        android:id="@+id/colors_textView"
+        android:background="#379237">
+
+        <TextView
+            android:id="@+id/family_textView"
+            style="@style/CustomDimen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/familyMembers_label" />
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/colors_label"
-        style="@style/CustomDimen"
-        android:background="#8800A0"
-        />
-    <TextView
-        android:id="@+id/phrases_textView"
+        android:background="#8800A0">
+
+        <TextView
+            android:id="@+id/colors_textView"
+            style="@style/CustomDimen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/colors_label" />
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/phrases_label"
-        style="@style/CustomDimen"
-        android:background="#16AFCA"
-        />
+        android:background="#16AFCA">
+
+        <TextView
+            android:id="@+id/phrases_textView"
+            style="@style/CustomDimen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/phrases_label" />
+    </FrameLayout>
+
 
 </LinearLayout>
