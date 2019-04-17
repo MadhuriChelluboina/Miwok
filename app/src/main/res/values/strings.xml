@@ -4,4 +4,7 @@
     <string name="numbers_label">Numbers</string>
     <string name="colors_label">Colors</string>
     <string name="familyMembers_label">Family Members</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
