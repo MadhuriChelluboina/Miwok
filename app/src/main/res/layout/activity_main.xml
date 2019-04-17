@@ -7,61 +7,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FD8E09">
-
-        <TextView
-            android:id="@+id/numbers_textView"
-            style="@style/CustomDimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="@string/numbers_label" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#379237">
-
-        <TextView
-            android:id="@+id/family_textView"
-            style="@style/CustomDimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="@string/familyMembers_label" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#8800A0">
-
-        <TextView
-            android:id="@+id/colors_textView"
-            style="@style/CustomDimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:text="@string/colors_label" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#16AFCA">
-
-        <TextView
-            android:id="@+id/phrases_textView"
-            style="@style/CustomDimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="@string/phrases_label" />
-    </FrameLayout>
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>
